@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class QuestionManager {
 
-    private final static Map<Integer, Question> questionList = new HashMap<>();
+    public final static Map<Integer, Question> questionList = new HashMap<>();
 
     static {
         init();
