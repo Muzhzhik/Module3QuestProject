@@ -4,8 +4,8 @@ import lombok.Getter;
 
 @Getter
 public class Answer {
-    private String text;
-    private boolean wrongAnswer;
+    private final String text;
+    private final boolean wrongAnswer;
 
     private String wrongAnswerEndText;
 

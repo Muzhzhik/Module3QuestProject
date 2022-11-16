@@ -4,7 +4,6 @@ import com.quest.questions.Answer;
 import com.quest.questions.Question;
 import com.quest.questions.QuestionManager;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,9 +12,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "GameServlet", value = "/game")
-public class GameServlet  extends HttpServlet {
+public class GameServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession currentSession = req.getSession();
         QuestionManager questionManager = new QuestionManager();
         Question currentQuestion = getCurrentQuestion(req);
@@ -37,7 +36,7 @@ public class GameServlet  extends HttpServlet {
 
     private Question getCurrentQuestion(HttpServletRequest req) {
         try {
-            return  (Question) req.getSession().getAttribute("question");
+            return (Question) req.getSession().getAttribute("question");
         } catch (Exception e) {
             return null;
         }
