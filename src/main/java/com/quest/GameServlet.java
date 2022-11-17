@@ -14,7 +14,7 @@ import java.io.IOException;
 @WebServlet(name = "GameServlet", value = "/game")
 public class GameServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession currentSession = req.getSession();
         QuestionManager questionManager = new QuestionManager();
         Question currentQuestion = getCurrentQuestion(req);
