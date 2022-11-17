@@ -29,7 +29,6 @@ public class GameServlet extends HttpServlet {
                 currentSession.setAttribute("wrongAnswer", currentAnswer);
             }
         }
-        System.out.println(nextQuestion);
         currentSession.setAttribute("question", nextQuestion);
         resp.sendRedirect("/game.jsp");
     }
